@@ -9,18 +9,20 @@ group = "com.mib"
 version = "1.0.2"
 gradlePlugin {
     plugins {
-        register("StringEn") {
+        register("stringEn") {
             id = "com.mib.publish"
             implementationClass = "com.mib.publish.StringEnPlugins"
-            displayName = "Gradle Greeting plugin"
-            description = "Gradle plugin to say hello!"
+            displayName = "Gradle $group $version"
+            description = "test$version"
             tags.set(listOf("search", "tags", "for", "your", "demo"))
         }
     }
 
     website.set("https://github.com/zengyimou/MainGradleDemo")
-    vcsUrl.set("https://github.com/zengyimou/MainGradleDemo")
+    vcsUrl.set("https://github.com/zengyimou/MainGradleDemo.git")
 }
+
+
 
 publishing {
     publications {
@@ -51,6 +53,7 @@ dependencies {
 }
 
 repositories {
+    mavenCentral()
     maven {
         url = uri("$rootDir/build/repo")
     }
